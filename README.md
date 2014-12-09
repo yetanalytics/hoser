@@ -1,10 +1,6 @@
 # hoser
 
-A Clojure library designed to ... well, that part is up to you.
-
-## Usage
-
-FIXME
+![](http://i.imgur.com/c612bc7.gif)
 
 ## License
 
