@@ -2,7 +2,12 @@
   (:require [cheshire.core :as c]
             [clojure.string :as str]))
 
-(defn tweet->stmt [tweet]
+;; I don't like hard-coding all this stuff, but for
+;; the current purposes, I don't see a better alternative.
+
+(defn tweet->stmt
+  "Converts a tweet object (after JSON parsing) to an xAPI Statement"
+  [tweet]
   (let [username (get-in tweet [:user :screen_name])
         id (:id_str tweet)
         twitter-url "https://twitter.com"]
