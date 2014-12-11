@@ -14,8 +14,10 @@
          (pmap bz2-reader))))
 
 (defn json-seq [rs]
-  (concat (c/parsed-seq (first rs) true)
-          (lazy-seq (json-seq (rest rs)))))
+  (when-let [srs (seq rs)]
+    (concat (c/parsed-seq (first srs) true)
+          (lazy-seq (json-seq (rest srs))))))
 
 (defn lazy-tweets [root-path]
-  (json-seq (lazy-file-readers root-path)))
+  (filter :text ;; only get tweets, only tweets have text
+          (json-seq (lazy-file-readers root-path))))
