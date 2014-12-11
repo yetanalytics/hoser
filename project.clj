@@ -6,4 +6,5 @@
   :dependencies [[org.clojure/clojure "1.7.0-alpha4"]
                  [twitter-api "0.7.7"]
                  [cheshire "5.3.1"]
-                 [http-kit "2.1.16"]])
+                 [http-kit "2.1.16"]
+                 [org.apache.commons/commons-compress "1.9"]])
