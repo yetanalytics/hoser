@@ -7,4 +7,5 @@
                  [twitter-api "0.7.7"]
                  [cheshire "5.3.1"]
                  [http-kit "2.1.16"]
+                 [clj-time "0.8.0"]
                  [org.apache.commons/commons-compress "1.9"]])
