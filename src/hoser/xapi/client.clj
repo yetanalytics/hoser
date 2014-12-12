@@ -26,3 +26,9 @@
                (if error
                  (println "Failed, exception is " error)
                  (println "Async HTTP POST: " status)))))
+
+(defn sync-send-stmt [stmt]
+  (let [{:keys [status headers body error] :as resp} @(http/post endpoint (merge options {:body stmt}))]
+    (if error
+      (println "ERROR: " error)
+      (println "POST: " status))))
