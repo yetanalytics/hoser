@@ -32,3 +32,6 @@
 
 (defn tweet->stmt [tweet]
   (c/generate-string (tweet->stmt* tweet)))
+
+(defn tweets->stmts [tweets]
+  (c/generate-string (mapv tweet->stmt* tweets)))

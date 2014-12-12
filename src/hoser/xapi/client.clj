@@ -11,7 +11,8 @@
   (str (:lrs-uri lrs-props) (:path lrs-props)))
 
 (def options
-  {:timeout 200
+  {:keepalive 30000
+   :timeout 1000
    :basic-auth [(:api-key lrs-props) (:api-secret lrs-props)]
    :user-agent "Hoser"
    :headers {"Accept" "application/json"
