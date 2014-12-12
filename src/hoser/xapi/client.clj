@@ -12,7 +12,7 @@
 
 (def options
   {:keepalive 30000
-   :timeout 1000
+   :timeout 10000
    :basic-auth [(:api-key lrs-props) (:api-secret lrs-props)]
    :user-agent "Hoser"
    :headers {"Accept" "application/json"
