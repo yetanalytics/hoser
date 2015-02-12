@@ -1,6 +1,8 @@
 (ns hoser.core
   (:require [hoser.xapi.client :as c]
             [hoser.xapi.statement :as s]
+            [hoser.xapi.statement.github :as gh]
+            [hoser.data.reader.github :as ghr]
             [hoser.data.reader.twitter :as r]
             [clojure.core.async :as async :refer [<! >! go-loop close! timeout chan to-chan alt! alts! go pipeline-blocking onto-chan]]))
 
@@ -39,3 +41,8 @@
               (println (str "errors: " errors))))))
 
     (pipeline-blocking hose-width result-chan (map c/sync-send-stmt) data-chan)))
+
+(defn send-github-issues []
+  (let [s-data (drop 1 ; drop the headers
+                     (ghr/get-issue-data "resources/github/issues/results-20150212-125746.csv"))]
+    (c/sync-send-stmt (gh/issues->statements s-data))))
