@@ -1,7 +1,7 @@
 (ns hoser.core
   (:require [hoser.xapi.client :as c]
             [hoser.xapi.statement :as s]
-            [hoser.data.reader :as r]
+            [hoser.data.reader.twitter :as r]
             [clojure.core.async :as async :refer [<! >! go-loop close! timeout chan to-chan alt! alts! go pipeline-blocking onto-chan]]))
 
 
