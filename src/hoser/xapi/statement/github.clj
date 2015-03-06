@@ -14,6 +14,7 @@
 
 (defn actor [actor-login]
   {:objectType "Agent"
+   :name actor-login
    :account {:homePage "https://github.com"
              :name actor-login}})
 
