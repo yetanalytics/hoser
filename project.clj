@@ -1,5 +1,5 @@
 (defproject hoser "0.1.0-SNAPSHOT"
-  :description "Twitter Firehose -> xAPI"
+  :description "Some Firehose -> xAPI"
   :url "http://example.com/FIXME"
   :license {:name "Eclipse Public License"
             :url "http://www.eclipse.org/legal/epl-v10.html"}
